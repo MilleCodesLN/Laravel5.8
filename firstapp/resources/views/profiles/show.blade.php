@@ -7,9 +7,9 @@
           <img src="https://scontent-cdg2-1.cdninstagram.com/v/t51.2885-15/e35/s150x150/100091395_613567476177619_1184006016704636123_n.jpg?_nc_ht=scontent-cdg2-1.cdninstagram.com&_nc_cat=107&_nc_ohc=9SM7RPOS0P0AX99Y--k&oh=9667a741f3a7d27fa66b67da64b27b63&oe=5F4E1EF2" alt="" class="rounded-circle">
       </div>
       <div class="col-8">
-        <div class="d-flex">
+        <div class="d-flex align-items-baseline">
 
-            <div class=' h4 mr-3 pt-2'>laravel_officieux</div>
+            <div class=' h4 mr-3 pt-2'>{{$user->username}}</div>
             <button class='btn btn-sm btn-primary'>S'abonner</button>
         </div>
         <div class="d-flex mt-3">
@@ -18,9 +18,9 @@
             <div class="mr-3"><strong>3</strong> abonnements</div>
         </div>
         <div class='mt-3'>
-            <div>Laravel Framework</div>
-            <div>Love beautiful code ? We do too.</div>
-            <div><a href="https://l.instagram.com/?u=http%3A%2F%2Flaravel.com%2F&e=ATO1AiFEJHftYskZMYvLp6ly8yHdXDjrECbpiwr9GXzztZWfBkLH0XleXDk_Pv_pqNi4YOHKG4ypNcXU50TgIw&s=1">laravel.com
+            <div class="font-weight-bold">{{$user->profile->title}}</div>
+            <div>{{$user->profile->description}}</div>
+            <div><a href="{{$user->profile->url}}">{{$user->profile->url}}
             </a></div>
         </div>
       </div>
