@@ -29,7 +29,9 @@
     <div class="row mt-5">
         @foreach ($user->posts as $post)
         <div class="col-4">
-            <img src="{{ asset('storage') .'/'. $post->image }}" class="w-100">
+        <a href="{{ route('posts.show', ['post' => $post->id]) }}">
+                <img src="{{ asset('storage') .'/'. $post->image }}" class="w-100">
+            </a>
         </div>
         @endforeach
     </div>
