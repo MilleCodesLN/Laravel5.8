@@ -10,12 +10,12 @@
         <div class="d-flex align-items-baseline">
 
             <div class=' h4 mr-3 pt-2'>{{$user->username}}</div>
-            <button class='btn btn-sm btn-primary'>S'abonner</button>
+            <follow-button profile-id="{{ $user->profile->id }}" follows = "{{ $follows }}" ></follow-button>
         </div>
         <div class="d-flex mt-3">
             <div class="mr-3"><strong>{{ $user->posts->count()}}</strong> publication(s)</div>
-            <div class="mr-3"><strong>951</strong> abonnés</div>
-            <div class="mr-3"><strong>3</strong> abonnements</div>
+            <div class="mr-3"><strong>{{$user->profile->followers->count()}}</strong> abonnés</div>
+            <div class="mr-3"><strong>{{ $user->following->count()}}</strong> abonnements</div>
         </div>
         @can('update', $user->profile)
             <a href="{{route('profiles.edit', $user->username) }}" class="btn btn-outline-secondary mt-3">Modifier mes informations</a>

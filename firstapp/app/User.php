@@ -57,6 +57,10 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Profile');
     }
+    public function following()
+    {
+        return $this->belongsToMany('App\Profile');
+    }
 
     public function posts()
     {

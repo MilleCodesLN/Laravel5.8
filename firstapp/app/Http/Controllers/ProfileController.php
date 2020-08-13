@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Intervention\Image\Facades\Image;
-use App\User;
 
 class ProfileController extends Controller
 {
     public function show(User $user)
     {
-        //dd($user->posts);
-        return view('profiles.show', compact('user'));
+        $follows = (auth()->user()) ? auth()->user()->following->contains($user->profile->id) : false;
+        return view('profiles.show', compact('user', 'follows'));
     }
 
     public function edit(User $user)

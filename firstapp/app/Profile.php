@@ -17,4 +17,9 @@ class Profile extends Model
         $imagePath = $this->image ?? 'avatars/default.png';
         return "/storage/" . $imagePath;
     }
+
+    public function followers()
+    {
+        return $this->belongsToMany('App\User');
+    }
 }
